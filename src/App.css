@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+html {
+    background: #f5f7f8;
+    font-family: system-ui;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    margin: 0;
+    padding: 0!important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.posts {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all 0.1s ease-in;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card article {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.card p {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.card span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 2em 0 0 0;
+}
+
+.card .post-img {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (min-width: 30em) {
+    .posts {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 60em) {
+    .posts {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 60em) {
+    .post-1 {
+        grid-column: 1/span 2;
+    }
+    .post-1 h1 {
+        font-size: 24px;
+    }
+}
+
+.card-img-top {
+    max-height: 550px;
 }
